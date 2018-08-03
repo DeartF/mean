@@ -1,0 +1,33 @@
+<section class="post-detail">
+	<img class="post-image" ng-src="{{vm.post.link}}">
+	<span class="post-title" ng-bind="vm.post.title">Title 1</span>
+	<span class="post-content" ng-bind="vm.post.content">Content2</span>
+	<div class="post-detail-info">
+		<span class="post-author" ng-bind="vm.post.author">Duisen Yeldisbayev</span>
+		<span class="post-date" ng-bind="vm.post.date">12.06.1996</span>
+	</div>
+	<form ng-submit="vm.addComment()">
+		<textarea ng-model="vm.text">
+		</textarea>
+		<button type="submit">Add comment</button>
+	</form>
+	<section class="comment">
+		<div class="comment-item" ng-repeat = "comment in vm.post.comments">
+			<span class="comment-author">Duisen Yeldisbayev</span>
+			<span class="comment-text" ng-bind="comment.text">
+				Some long very long text, with many characters.
+			</span>
+			<span class="comment-date" ng-bind ="comment.date | date">12.02.2018</span>
+			<img src="/../images/edit.svg" alt="" class="comm" ng-click = "vm.selectComment($index, comment)">
+			<img src="/../images/minus.svg" alt="" class="comm" ng-click = "vm.deleteComment($index, comment)">
+			<form class="comment-edit" ng-if="vm.currentComment == $index" id = 'currentComment'>
+				<textarea class="comment-edit__input" ng-model = "vm.currentCommentText">
+					
+				</textarea>
+				<button class="comment-edit__btn">Save</button>
+				<button class="comment-edit__btn" ng-click = "vm.cancelComment()">Cancel</button>
+
+			</form>
+		</div>
+	</section>
+</section>

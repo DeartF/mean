@@ -1,0 +1,25 @@
+td {
+	padding-right: 100px;
+}
+
+button {
+	outline: none;
+	color: #fff;
+	border-radius: 15px;
+	background-color: #242424;
+	font-size: 16px;
+	padding: 10px 20px;
+	cursor: pointer;
+	border: none;
+	margin-top: 10px;
+}
+
+button:hover {
+	transform: scale(1.1 , 1.1) ;
+	opacity: .9;
+}
+
+body {
+	background-color: #f9f9f9;
+}
+
